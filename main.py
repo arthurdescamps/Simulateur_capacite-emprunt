@@ -18,3 +18,9 @@ taux_assurance = st.number_input("Entrez le taux d'assurance", step = 0.0001, va
 capacite_emprunt = functions.capacite_emprunt(mensualite_max, taux_credit, taux_assurance, nombre_mensualite)
 st.write("Votre capacité d'emprunt maximale est de :", capacite_emprunt)
 
+loyers = st.number_input("Entrez les loyers estimés que vous pensez percevoir avec cette capacité d'emprunt", value = 650)
+loyers_pris_en_compte = functions.prise_en_compte_loyer(loyers)
+mensualite_max_new = functions.mensualite_max(revenus + loyers_pris_en_compte)
+
+capacite_emprunt_new = functions.capacite_emprunt(mensualite_max_new, taux_credit, taux_assurance, nombre_mensualite)
+st.write("Votre capacité d'emprunt maximale en prenant en compte ces loyers est de :", capacite_emprunt_new, ". C'est donc un gain de :" , capacite_emprunt_new - capacite_emprunt)
