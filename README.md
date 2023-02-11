@@ -1,0 +1,1 @@
+Ce projet a pour but de montrer l'évolution de la capacité d'emprunt permise pas une stratégie d'investissement locatif
